@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+Job site- {{jobs.title}}
+{% endblock %}
+{%block content%}
+<h2 class="text-center mt-2 mb-4">{{jobs.title}}</h2>
+<div class="row">
+    <div class="col-md-6 mb-3">
+  <div class="card h-100">
+    <div class="card-header">
+     <b> Location</b>
+    </div>
+    <div class="card-body">
+    <p class="card-text">{{ jobs.location }}</p>
+      
+      
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 mb-3">
+  <div class="card h-100">
+    <div class="card-header">
+     <b> Salary</b>
+    </div>
+    <div class="card-body">
+     <!-- <h5 class="card-title  "></h5>-->
+     
+      {% if 'salary' in jobs %}
+        <p class="card-text">{{ jobs.salary }}</p>
+      {% else %}
+        <p class="card-text">Salary: Not Specified</p>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+<div class="jumbotron py-2">
+    <h4>Requirements</h4>
+    <ul>
+      {% for line in jobs.requirements.rstrip('.').split('.') %}
+      <li>{{line}}</li>
+      {% endfor %}
+    </ul>
+    <!-- {{ jobs.requirements | safe}} -->
+</div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="jumbotron py-2">
+            <h4>Responsibilites</h4>
+             <ul>
+      {% for line in jobs.skill.rstrip('.').split('.') %}
+      <li>{{line}}</li>
+      {% endfor %}
+    
+        </div>
+    </div>
+
+    
+ </div>
+<!-- {{jobs}} -->
+{%endblock%}

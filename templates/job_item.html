@@ -1,0 +1,20 @@
+<div class="col-md-4 mb-3">
+  <div class="card h-100">
+    <div class="card-header">
+     <b> {{ job.title }}</b>
+    </div>
+    <div class="card-body">
+     <!-- <h5 class="card-title  "></h5>-->
+      <h6 class="card-subtitle mb-2 text-muted">Location: {{ job.location }}</h6>
+      {% if 'salary' in job %}
+        <p class="card-text">Salary: {{ job.salary }}</p>
+      {% else %}
+        <p class="card-text">Salary: Not Specified</p>
+      {% endif %}
+      <div class="d-flex justify-content-end">
+        <a  href="job_detail/{{job.id}}" type="button" 
+        class="btn btn-outline-primary">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>
