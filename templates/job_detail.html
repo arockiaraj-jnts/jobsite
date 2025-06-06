@@ -3,7 +3,17 @@
 Job site- {{jobs.title}}
 {% endblock %}
 {%block content%}
-<h2 class="text-center mt-2 mb-4">{{jobs.title}}</h2>
+<div class="row align-items-center mt-2 mb-4">
+  <div class="col-md-8 text-center text-md-left">
+    <h2 class="mb-0">{{ jobs.title }}</h2>
+  </div>
+  <div class="col-md-4 text-md-right mt-2 mt-md-0">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+      Apply
+    </button>
+  </div>
+</div>
+
 <div class="row">
     <div class="col-md-6 mb-3">
   <div class="card h-100">
@@ -39,8 +49,8 @@ Job site- {{jobs.title}}
 </div>
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-<div class="jumbotron py-2">
+    <div class="col-md-6 mb-0">
+<div class="jumbotron py-2  mb-0">
     <h4>Requirements</h4>
     <ul>
       {% for line in jobs.requirements.rstrip('.').split('.') %}
@@ -51,8 +61,8 @@ Job site- {{jobs.title}}
 </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-        <div class="jumbotron py-2">
+    <div class="col-md-6 mb-0">
+        <div class="jumbotron py-2  mb-2">
             <h4>Responsibilites</h4>
              <ul>
       {% for line in jobs.skill.rstrip('.').split('.') %}
@@ -64,5 +74,14 @@ Job site- {{jobs.title}}
 
     
  </div>
+ <!-- Button trigger modal -->
+
+<div class="pt-0 pb-0 mt-0 mb-4 d-flex justify-content-end">
+  <button type="button" class="btn btn-primary mt-0 mb-0" data-toggle="modal" data-target="#staticBackdrop">
+    Apply
+  </button>
+</div>
+
 <!-- {{jobs}} -->
+ {% include  'job_apply.html'%}
 {%endblock%}

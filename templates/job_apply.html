@@ -1,0 +1,67 @@
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/job/{{jobs.id}}/job_apply" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputPassword4">Name</label>
+                    <input type="text"  name='name'  class="form-control" id="name">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" name='email' class="form-control" id="inputEmail4">
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Linkedin Url</label>
+                    <input type="text" name='linkedin_url' class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputCity">Education</label>
+                    <textarea type="text" name="edu" class="form-control" id="inputCity"> </textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputState">Experience</label>
+                    <textarea type="text"  name='exp' class="form-control" id="inputCity"> </textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputZip">Resume URL</label>
+                    <input type="text"name='rurl'  class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

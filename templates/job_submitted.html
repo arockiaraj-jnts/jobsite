@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{%block title %}
+Job submitted
+{%endblock%}
+{%block content%}
+{{application.email}}
+<div class="alert alert-dark" role="alert">
+  <h4> Application Submitted Successfully</h4>
+</div>
+
+<div class="alert alert-info " role="alert">
+  <div class="mb-4"><b> Name</b> <br> <p >{{application.name}}</p></div>
+   <div class="mb-4"><b> Email</b> <br>  {{application.email}}</div>
+   <div class="mb-4"><b> Linkedin URL</b> <br>  {{application.linkedin_url}}</div>
+   <div class="mb-4"><b> Education</b> <br>  {{application.edu}}</div>
+   <div class="mb-4"><b> Work Experience</b> <br>  {{application.exp}}</div>
+   <div class="mb-4"><b> Resume_url</b> <br>  {{application.rurl}}</div>
+</div>
+
+{%endblock%}
+
+<script>
+  $(document).ready(function() {
+    $('#submit-toast').toast('show');
+  });
+</script>

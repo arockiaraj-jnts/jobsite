@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, json
+from flask import Flask, render_template, jsonify, json,request
 from curd import load_job,load_job_byID
 
 app = Flask(__name__)
@@ -27,6 +27,14 @@ def job_detail(id):
   jobs['requirements']=transformtxt
   #return json.dumps(jobs)
   return render_template('job_detail.html',jobs=jobs)
+
+@app.route('/job/<id>/job_apply',methods=['post'])
+def job_apply(id):
+# data=request.args #from url or get
+ data=request.form
+ #return jsonify(data)
+ return render_template('job_submitted.html',application=data)
+
 
 
 if (__name__ == '__main__'):
