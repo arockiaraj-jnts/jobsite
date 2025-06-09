@@ -19,3 +19,19 @@ def load_job_byID(id):
         return(dict(row._mapping))  # Convert row to dict
     #else :    
     #    return None
+
+def save_job(jobid,data):
+  with engine.begin() as conn:
+    query=text("insert into  applications(job_id,fullname,linkedin_url,email,education,work_experience,resume_url) " \
+    "values(:job_id,:fullname,:linkedinurl,:email,:education,:work_experience,:resume_url)")
+    conn.execute(query,
+                 {
+                  'job_id':jobid,
+                 'fullname':data['name'],
+                 'linkedinurl':data['linkedin_url'],
+                 'email':data['email'],
+                 'education':data['edu'],
+                 'work_experience':data['exp'],
+                 'resume_url':data['rurl']
+                 }
+                 )

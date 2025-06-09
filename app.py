@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, json,request
-from curd import load_job,load_job_byID
+from curd import load_job,load_job_byID,save_job
 
 app = Flask(__name__)
 
@@ -32,8 +32,11 @@ def job_detail(id):
 def job_apply(id):
 # data=request.args #from url or get
  data=request.form
+ jobs=load_job_byID(id)
  #return jsonify(data)
- return render_template('job_submitted.html',application=data)
+ save_job(id,data)
+ print("Datasaved")
+ return render_template('job_submitted.html',application=data,jobs=jobs)
 
 
 
